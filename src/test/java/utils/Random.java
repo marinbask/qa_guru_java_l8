@@ -15,7 +15,6 @@ public class Random {
     }
 
     public static String getRandomString(int len) {
-        //String AB = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
         String AB = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
         SecureRandom rnd = new SecureRandom();
@@ -26,11 +25,10 @@ public class Random {
     }
 
     public static String getRandomEmail() {
-        return getRandomString(10) + "@sberbank.ru";
+        return getRandomString(10) + "@test.com";
     }
 
     public static String getRandomAddress() {
-        //return new Faker().address().streetAddress();
         return getRandomString(10) + " " + getRandomString(10) + " " + getRandomString(10);
     }
 
@@ -58,7 +56,7 @@ public class Random {
     }
 
     public static String getRandomPicture() {
-        String[] picture = {"amtrsv.png", "amtrsv32.png", "amtrsv134.png", "amtrsv12345.png"};
+        String[] picture = {"1.png", "2.png", "3.png", "4.png"};
 
         return getRandomItemFromArray(picture);
     }

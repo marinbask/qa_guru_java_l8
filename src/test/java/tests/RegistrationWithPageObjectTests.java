@@ -9,7 +9,7 @@ public class RegistrationWithPageObjectTests extends TestBase{
 
     @Test
     //Проверка на ввод всех полей
-        void checkFormRegistration(){
+        void checkFormRegistrationTest(){
         registrationPage.openPage()
                 .closeAd()
                 .setFirstName("Marina")
@@ -42,7 +42,7 @@ public class RegistrationWithPageObjectTests extends TestBase{
 
     @Test
     //Проверка на ввод обязательных полей
-    void checkFormRegistrationRequiredFields(){
+    void checkFormRegistrationRequiredFieldsTest(){
 
         registrationPage.openPage()
                 .closeAd()
@@ -66,7 +66,7 @@ public class RegistrationWithPageObjectTests extends TestBase{
 
     @Test
     //Проверка отрпавки незаполненной формы
-    void checkFormRegistrationEmptyFields() {
+    void checkFormRegistrationEmptyFieldsTest() {
         registrationPage.openPage()
                 .closeAd()
                 .setClickButton()

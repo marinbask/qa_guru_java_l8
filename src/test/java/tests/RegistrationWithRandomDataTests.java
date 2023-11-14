@@ -9,7 +9,7 @@ public class RegistrationWithRandomDataTests extends TestBase {
 
     @Test
     //Проверка на ввод всех полей
-    void checkFormRegistration() {
+    void checkFormRegistrationTest() {
 
 
         registrationPage.openPage()
@@ -43,7 +43,7 @@ public class RegistrationWithRandomDataTests extends TestBase {
 
     @Test
     //Проверка на ввод обязательных полей
-    void checkFormRegistrationRequiredFields() {
+    void checkFormRegistrationRequiredFieldsTest() {
 
         registrationPage.openPage()
                 .closeAd()
@@ -67,7 +67,7 @@ public class RegistrationWithRandomDataTests extends TestBase {
 
     @Test
     //Проверка отправки пустой формы
-    void checkFormRegistrationEmptyFields() {
+    void checkFormRegistrationEmptyFieldsTest() {
         registrationPage.openPage()
                 .closeAd()
                 .setClickButton()
