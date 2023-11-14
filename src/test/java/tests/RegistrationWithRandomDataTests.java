@@ -1,5 +1,4 @@
 package tests;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import pages.StudentRegistrationPage;
 
@@ -8,9 +7,8 @@ public class RegistrationWithRandomDataTests extends TestBase {
     TestData testData = new TestData();
 
     @Test
-    //Проверка на ввод всех полей
-    void checkFormRegistrationTest() {
 
+    void checkFormRegistrationTest() {
 
         registrationPage.openPage()
                 .closeAd()
@@ -42,7 +40,6 @@ public class RegistrationWithRandomDataTests extends TestBase {
     }
 
     @Test
-    //Проверка на ввод обязательных полей
     void checkFormRegistrationRequiredFieldsTest() {
 
         registrationPage.openPage()
@@ -66,7 +63,6 @@ public class RegistrationWithRandomDataTests extends TestBase {
     }
 
     @Test
-    //Проверка отправки пустой формы
     void checkFormRegistrationEmptyFieldsTest() {
         registrationPage.openPage()
                 .closeAd()
