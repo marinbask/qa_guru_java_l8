@@ -35,5 +35,3 @@ public class TestBase {
         clearBrowserCookies();
         clearBrowserLocalStorage();
         closeWebDriver();
-    }
-}

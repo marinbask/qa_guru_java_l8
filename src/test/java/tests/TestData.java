@@ -33,7 +33,7 @@ public class TestData {
             case "Rajasthan":
                 return faker.options().option("Jaipur", "Jaiselmer");
             default:
-                return null;
+                return state;
         }
 
     }
