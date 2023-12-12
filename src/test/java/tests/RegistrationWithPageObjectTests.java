@@ -1,5 +1,5 @@
 package tests;
-import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.StudentRegistrationPage;
 
@@ -8,6 +8,7 @@ public class RegistrationWithPageObjectTests extends TestBase{
     StudentRegistrationPage registrationPage = new StudentRegistrationPage();
 
     @Test
+    @Tag("WEB")
     //Проверка на ввод всех полей
         void checkFormRegistrationTest(){
         registrationPage.openPage()
@@ -41,6 +42,7 @@ public class RegistrationWithPageObjectTests extends TestBase{
 
 
     @Test
+    @Tag("WEB")
     //Проверка на ввод обязательных полей
     void checkFormRegistrationRequiredFieldsTest(){
 
@@ -65,6 +67,7 @@ public class RegistrationWithPageObjectTests extends TestBase{
     }
 
     @Test
+    @Tag("WEB")
     //Проверка отрпавки незаполненной формы
     void checkFormRegistrationEmptyFieldsTest() {
         registrationPage.openPage()
