@@ -25,6 +25,7 @@ public class TestBase {
         Configuration.browserCapabilities = capabilities;
         SelenideLogger.addListener("allure", new AllureSelenide());
     }
+
     @AfterEach
     void setUp() {
         Attach.screenshotAs("Last screenshot");
@@ -35,3 +36,5 @@ public class TestBase {
         clearBrowserCookies();
         clearBrowserLocalStorage();
         closeWebDriver();
+    }
+}

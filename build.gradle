@@ -7,20 +7,18 @@ def allureVersion = "2.21.0"
 
 allure {
     report {
-        version.set("2.24.1")
+        version.set(allureVersion)
     }
-    adapter {
-        aspectjWeaver.set(true)
+    adapter { // отвечает за появление папочки build/allure-results
+        aspectjWeaver.set(true) //обработка аннотации @Step
         frameworks {
-            junit5 {
-                adapterVersion.set("2.24.0")
+            junit5 { //название фреймворка
+                adapterVersion.set(allureVersion) //версия интеграции фреймворка и Allure
             }
         }
     }
 }
-tasks.withType(JavaCompile).configureEach {
-    options.encoding = 'UTF-8'
-}
+
 
 repositories {
     mavenCentral()
