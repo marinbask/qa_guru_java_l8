@@ -1,32 +1,44 @@
 package tests;
 import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import pages.StudentRegistrationPage;
+import static io.qameta.allure.Allure.step;
 
 public class RegistrationWithPageObjectTests extends TestBase{
 
     StudentRegistrationPage registrationPage = new StudentRegistrationPage();
 
     @Test
+
+
+
+    @DisplayName("Проверка формы на ввод всех полей")
     @Tag("WEB")
-    //Проверка на ввод всех полей
-        void checkFormRegistrationTest(){
-        registrationPage.openPage()
-                .closeAd()
-                .setFirstName("Marina")
-                .setLastName("Baskova")
-                .setEmail("testqagurujava@test.com")
-                .setGender("Female")
-                .setUserNumber("1234567890")
-                .setDateOfBirth("14", "June", "1989")
-                .setSubjectsInput("English")
-                .setHobbiesCheckbox("Sports")
-                .loadPictureInput("1.png")
-                .setCurrentAddress("Russia.Moscow")
-                .setState("Haryana")
-                .setCity("Karnal")
-                .setClickButton()
-                .tableVisible()
+    void checkFormRegistrationTest() {
+        step("Открываем страницу", () -> {
+                registrationPage.openPage();
+            });
+            step("Заполняем все поля", () -> {
+                registrationPage
+                        .closeAd()
+                        .setFirstName("Marina")
+                        .setLastName("Baskova")
+                        .setEmail("testqagurujava@test.com")
+                        .setGender("Female")
+                        .setUserNumber("1234567890")
+                        .setDateOfBirth("14", "June", "1989")
+                        .setSubjectsInput("English")
+                        .setHobbiesCheckbox("Sports")
+                        .loadPictureInput("1.png")
+                        .setCurrentAddress("Russia.Moscow")
+                        .setState("Haryana")
+                        .setCity("Karnal")
+                        .setClickButton()
+                        .tableVisible();
+            });
+    step("Проверяем корректность заполненных полей", () -> {
+            registrationPage
                 .resultCheck("Student Name", "Marina Baskova")
                 .resultCheck("Student Email", "testqagurujava@test.com")
                 .resultCheck("Gender", "Female")
@@ -38,17 +50,18 @@ public class RegistrationWithPageObjectTests extends TestBase{
                 .resultCheck("Address", "Russia.Moscow")
                 .resultCheck("State and City", "Haryana Karnal");
 
-    }
+    });
 
 
-    @Test
-    @Tag("WEB")
-    //Проверка на ввод обязательных полей
-    void checkFormRegistrationRequiredFieldsTest(){
+        void checkFormRegistrationRequiredFieldsTest() {
+             step("Открываем страницу", () -> {
+                     registrationPage.openPage();
+        });
 
-        registrationPage.openPage()
-                .closeAd()
-                .setFirstName("Marina")
+        step("Закрываем рекламу", () -> {
+
+        registrationPage.closeAd();
+        registrationPage.setFirstName("Marina")
                 .setLastName("Baskova")
                 .setGender("Female")
                 .setUserNumber("1234567890")
@@ -56,8 +69,13 @@ public class RegistrationWithPageObjectTests extends TestBase{
                 .setHobbiesCheckbox("Sports")
                 .setCurrentAddress("Russia.Moscow")
                 .setClickButton()
-                .tableVisible()
+                .tableVisible();
+        });
 
+        step("Проверяем корректность заполненных полей", () -> {
+            registrationPage.tableVisible();
+        });
+            registrationPage
                 .resultCheck("Student Name", "Marina Baskova")
                 .resultCheck("Gender", "Female")
                 .resultCheck("Mobile", "123456789")
@@ -67,12 +85,23 @@ public class RegistrationWithPageObjectTests extends TestBase{
     }
 
     @Test
+    @DisplayName("Проверка отправки пустой формы")
     @Tag("WEB")
-    //Проверка отрпавки незаполненной формы
-    void checkFormRegistrationEmptyFieldsTest() {
-        registrationPage.openPage()
-                .closeAd()
-                .setClickButton()
-                .tableHidden();
+        void checkFormRegistrationEmptyFieldsTest() {
+
+            step("Открываем страницу", () -> {
+                registrationPage.openPage();
+            });
+
+            step("Закрываем рекламу", () -> {
+
+                registrationPage.closeAd();
+            });
+
+            step("Проверяем что фома пустая, нажатием кнопки submit", () -> {
+
+                registrationPage.setClickButton()
+                        .tableHidden();
+            });
+        }
     }
-}
