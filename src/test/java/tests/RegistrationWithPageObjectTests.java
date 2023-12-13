@@ -17,43 +17,45 @@ public class RegistrationWithPageObjectTests extends TestBase{
     @Tag("WEB")
     void checkFormRegistrationTest() {
         step("Открываем страницу", () -> {
-                registrationPage.openPage();
-            });
-            step("Заполняем все поля", () -> {
-                registrationPage
-                        .closeAd()
-                        .setFirstName("Marina")
-                        .setLastName("Baskova")
-                        .setEmail("testqagurujava@test.com")
-                        .setGender("Female")
-                        .setUserNumber("1234567890")
-                        .setDateOfBirth("14", "June", "1989")
-                        .setSubjectsInput("English")
-                        .setHobbiesCheckbox("Sports")
-                        .loadPictureInput("1.png")
-                        .setCurrentAddress("Russia.Moscow")
-                        .setState("Haryana")
-                        .setCity("Karnal")
-                        .setClickButton()
-                        .tableVisible();
-            });
-    step("Проверяем корректность заполненных полей", () -> {
+            registrationPage.openPage();
+        });
+        step("Заполняем все поля", () -> {
             registrationPage
-                .resultCheck("Student Name", "Marina Baskova")
-                .resultCheck("Student Email", "testqagurujava@test.com")
-                .resultCheck("Gender", "Female")
-                .resultCheck("Mobile", "123456789")
-                .resultCheck("Date of Birth", "14 June,1989")
-                .resultCheck("Subjects", "English")
-                .resultCheck("Hobbies", "Sports")
-                .resultCheck("Picture", "1.png")
-                .resultCheck("Address", "Russia.Moscow")
-                .resultCheck("State and City", "Haryana Karnal");
+                    .closeAd()
+                    .setFirstName("Marina")
+                    .setLastName("Baskova")
+                    .setEmail("testqagurujava@test.com")
+                    .setGender("Female")
+                    .setUserNumber("1234567890")
+                    .setDateOfBirth("14", "June", "1989")
+                    .setSubjectsInput("English")
+                    .setHobbiesCheckbox("Sports")
+                    .loadPictureInput("1.png")
+                    .setCurrentAddress("Russia.Moscow")
+                    .setState("Haryana")
+                    .setCity("Karnal")
+                    .setClickButton()
+                    .tableVisible();
+        });
+        step("Проверяем корректность заполненных полей", () -> {
+            registrationPage
+                    .resultCheck("Student Name", "Marina Baskova")
+                    .resultCheck("Student Email", "testqagurujava@test.com")
+                    .resultCheck("Gender", "Female")
+                    .resultCheck("Mobile", "123456789")
+                    .resultCheck("Date of Birth", "14 June,1989")
+                    .resultCheck("Subjects", "English")
+                    .resultCheck("Hobbies", "Sports")
+                    .resultCheck("Picture", "1.png")
+                    .resultCheck("Address", "Russia.Moscow")
+                    .resultCheck("State and City", "Haryana Karnal");
 
-    });
-
-
-        void checkFormRegistrationRequiredFieldsTest() {
+        });
+    }
+    @Test
+    @DisplayName("Проверка формы на ввод обязательных полей")
+    @Tag("WEB")
+    void checkFormRegistrationRequiredFieldsTest() {
              step("Открываем страницу", () -> {
                      registrationPage.openPage();
         });
