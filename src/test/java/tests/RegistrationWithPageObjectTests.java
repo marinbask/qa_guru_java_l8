@@ -1,4 +1,5 @@
 package tests;
+import io.qameta.allure.*;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -10,9 +11,9 @@ public class RegistrationWithPageObjectTests extends TestBase{
     StudentRegistrationPage registrationPage = new StudentRegistrationPage();
 
     @Test
-
-
-
+    @Feature("Заполнение формы")
+    @Owner("BaskovaM")
+    @Severity(SeverityLevel.NORMAL)
     @DisplayName("Проверка формы на ввод всех полей")
     @Tag("WEB")
     void checkFormRegistrationTest() {
@@ -53,6 +54,9 @@ public class RegistrationWithPageObjectTests extends TestBase{
         });
     }
     @Test
+    @Feature("Обязательные поля")
+    @Owner("BaskovaM")
+    @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Проверка формы на ввод обязательных полей")
     @Tag("WEB")
     void checkFormRegistrationRequiredFieldsTest() {
@@ -87,6 +91,9 @@ public class RegistrationWithPageObjectTests extends TestBase{
     }
 
     @Test
+    @Feature("Пустая форма")
+    @Owner("BaskovaM")
+    @Severity(SeverityLevel.TRIVIAL)
     @DisplayName("Проверка отправки пустой формы")
     @Tag("WEB")
         void checkFormRegistrationEmptyFieldsTest() {
