@@ -13,13 +13,13 @@ public class RegistrationWithPageObjectTests extends TestBase{
 
 
 
-    @DisplayName("Ïðîâåðêà ôîðìû íà ââîä âñåõ ïîëåé")
+    @DisplayName("ÐŸÑ€Ð¾Ð²ÐµÑ€ÐºÐ° Ñ„Ð¾Ñ€Ð¼Ñ‹ Ð½Ð° Ð²Ð²Ð¾Ð´ Ð²ÑÐµÑ… Ð¿Ð¾Ð»ÐµÐ¹")
     @Tag("WEB")
     void checkFormRegistrationTest() {
-        step("Îòêðûâàåì ñòðàíèöó", () -> {
+        step("ÐžÑ‚ÐºÑ€Ñ‹Ð²Ð°ÐµÐ¼ ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ†Ñƒ", () -> {
             registrationPage.openPage();
         });
-        step("Çàïîëíÿåì âñå ïîëÿ", () -> {
+        step("Ð—Ð°Ð¿Ð¾Ð»Ð½ÑÐµÐ¼ Ð²ÑÐµ Ð¿Ð¾Ð»Ñ", () -> {
             registrationPage
                     .closeAd()
                     .setFirstName("Marina")
@@ -37,7 +37,7 @@ public class RegistrationWithPageObjectTests extends TestBase{
                     .setClickButton()
                     .tableVisible();
         });
-        step("Ïðîâåðÿåì êîððåêòíîñòü çàïîëíåííûõ ïîëåé", () -> {
+        step("ÐŸÑ€Ð¾Ð²ÐµÑ€ÑÐµÐ¼ ÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ð¾ÑÑ‚ÑŒ Ð·Ð°Ð¿Ð¾Ð»Ð½ÐµÐ½Ð½Ñ‹Ñ… Ð¿Ð¾Ð»ÐµÐ¹", () -> {
             registrationPage
                     .resultCheck("Student Name", "Marina Baskova")
                     .resultCheck("Student Email", "testqagurujava@test.com")
@@ -53,14 +53,14 @@ public class RegistrationWithPageObjectTests extends TestBase{
         });
     }
     @Test
-    @DisplayName("Ïðîâåðêà ôîðìû íà ââîä îáÿçàòåëüíûõ ïîëåé")
+    @DisplayName("ÐŸÑ€Ð¾Ð²ÐµÑ€ÐºÐ° Ñ„Ð¾Ñ€Ð¼Ñ‹ Ð½Ð° Ð²Ð²Ð¾Ð´ Ð¾Ð±ÑÐ·Ð°Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ñ… Ð¿Ð¾Ð»ÐµÐ¹")
     @Tag("WEB")
     void checkFormRegistrationRequiredFieldsTest() {
-             step("Îòêðûâàåì ñòðàíèöó", () -> {
+             step("ÐžÑ‚ÐºÑ€Ñ‹Ð²Ð°ÐµÐ¼ ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ†Ñƒ", () -> {
                      registrationPage.openPage();
         });
 
-        step("Çàêðûâàåì ðåêëàìó", () -> {
+        step("Ð—Ð°ÐºÑ€Ñ‹Ð²Ð°ÐµÐ¼ Ñ€ÐµÐºÐ»Ð°Ð¼Ñƒ", () -> {
 
         registrationPage.closeAd();
         registrationPage.setFirstName("Marina")
@@ -74,7 +74,7 @@ public class RegistrationWithPageObjectTests extends TestBase{
                 .tableVisible();
         });
 
-        step("Ïðîâåðÿåì êîððåêòíîñòü çàïîëíåííûõ ïîëåé", () -> {
+        step("ÐŸÑ€Ð¾Ð²ÐµÑ€ÑÐµÐ¼ ÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ð¾ÑÑ‚ÑŒ Ð·Ð°Ð¿Ð¾Ð»Ð½ÐµÐ½Ð½Ñ‹Ñ… Ð¿Ð¾Ð»ÐµÐ¹", () -> {
             registrationPage.tableVisible();
         });
             registrationPage
@@ -87,20 +87,20 @@ public class RegistrationWithPageObjectTests extends TestBase{
     }
 
     @Test
-    @DisplayName("Ïðîâåðêà îòïðàâêè ïóñòîé ôîðìû")
+    @DisplayName("ÐŸÑ€Ð¾Ð²ÐµÑ€ÐºÐ° Ð¾Ñ‚Ð¿Ñ€Ð°Ð²ÐºÐ¸ Ð¿ÑƒÑÑ‚Ð¾Ð¹ Ñ„Ð¾Ñ€Ð¼Ñ‹")
     @Tag("WEB")
         void checkFormRegistrationEmptyFieldsTest() {
 
-            step("Îòêðûâàåì ñòðàíèöó", () -> {
+            step("ÐžÑ‚ÐºÑ€Ñ‹Ð²Ð°ÐµÐ¼ ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ†Ñƒ", () -> {
                 registrationPage.openPage();
             });
 
-            step("Çàêðûâàåì ðåêëàìó", () -> {
+            step("Ð—Ð°ÐºÑ€Ñ‹Ð²Ð°ÐµÐ¼ Ñ€ÐµÐºÐ»Ð°Ð¼Ñƒ", () -> {
 
                 registrationPage.closeAd();
             });
 
-            step("Ïðîâåðÿåì ÷òî ôîìà ïóñòàÿ, íàæàòèåì êíîïêè submit", () -> {
+            step("ÐŸÑ€Ð¾Ð²ÐµÑ€ÑÐµÐ¼ Ñ‡Ñ‚Ð¾ Ñ„Ð¾Ð¼Ð° Ð¿ÑƒÑÑ‚Ð°Ñ, Ð½Ð°Ð¶Ð°Ñ‚Ð¸ÐµÐ¼ ÐºÐ½Ð¾Ð¿ÐºÐ¸ submit", () -> {
 
                 registrationPage.setClickButton()
                         .tableHidden();
