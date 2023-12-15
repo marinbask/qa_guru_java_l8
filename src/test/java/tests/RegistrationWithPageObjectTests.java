@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 import pages.StudentRegistrationPage;
 import static io.qameta.allure.Allure.step;
 
+@DisplayName("Тесты на заполнение DemoQA Registration Form")
+@Tag("all-tests")
 public class RegistrationWithPageObjectTests extends TestBase{
 
     StudentRegistrationPage registrationPage = new StudentRegistrationPage();
@@ -15,7 +17,7 @@ public class RegistrationWithPageObjectTests extends TestBase{
     @Owner("BaskovaM")
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("Проверка формы на ввод всех полей")
-    @Tag("WEB")
+    @Tag("positive")
     void checkFormRegistrationTest() {
         step("Открываем страницу", () -> {
             registrationPage.openPage();
@@ -58,7 +60,7 @@ public class RegistrationWithPageObjectTests extends TestBase{
     @Owner("BaskovaM")
     @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Проверка формы на ввод обязательных полей")
-    @Tag("WEB")
+    @Tag("positive")
     void checkFormRegistrationRequiredFieldsTest() {
              step("Открываем страницу", () -> {
                      registrationPage.openPage();
@@ -95,7 +97,7 @@ public class RegistrationWithPageObjectTests extends TestBase{
     @Owner("BaskovaM")
     @Severity(SeverityLevel.TRIVIAL)
     @DisplayName("Проверка отправки пустой формы")
-    @Tag("WEB")
+    @Tag("negative")
         void checkFormRegistrationEmptyFieldsTest() {
 
             step("Открываем страницу", () -> {

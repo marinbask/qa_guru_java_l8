@@ -37,6 +37,7 @@ dependencies {
 }
 
 tasks.withType(Test) {
+    systemProperties(System.getProperties())
     useJUnitPlatform()
 
     testLogging {
@@ -46,15 +47,22 @@ tasks.withType(Test) {
         }
     }
 }
-tasks.register('WEB', Test) {
-    useJUnitPlatform {
-        includeTags("WEB")
-    }
 
-}
-tasks.register('PO', Test) {
+task all_tests(type: Test) {
     useJUnitPlatform {
-        includeTags("WEB")
+        includeTags("all-tests")
+    }
+}
+
+task positive_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags("positive")
+    }
+}
+
+task negative_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags("negative")
     }
 }
 
