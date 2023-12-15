@@ -1,0 +1,17 @@
+{
+  "base": {
+    "project": "${JOB_BASE_NAME}",
+    "environment": "Test",
+    "comment": "Тегнуть @baskova_marina",
+    "reportLink": "${BUILD_URL}",
+    "language": "ru",
+    "messenger": "telegram",
+    "allureFolder": "allure-report",
+    "enableChart": true
+  },
+  "telegram": {
+    "token": "6939295522:AAH0Anl-yT0FWpdFrKfCbAXDFwSD1BUhTEQ",
+    "chat": "-1012467454",
+    "replyTo": "@baskova_marina"
+  }
+}
